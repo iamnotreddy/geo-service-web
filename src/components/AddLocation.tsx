@@ -27,7 +27,7 @@ export const AddLocation = () => {
 
   const queryClient = useQueryClient();
 
-  const { mutate, isPending } = useMutation({
+  const { mutate } = useMutation({
     mutationFn: (data: MapPointData) =>
       fetch("http://localhost:3001/map-points", {
         method: "POST",

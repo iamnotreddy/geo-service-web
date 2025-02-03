@@ -1,22 +1,16 @@
 "use client"; // This is important - Map must be a client component
 
 import Map, { Marker, Popup } from "react-map-gl";
-import type {
-  MarkerDragEvent,
-  MapMouseEvent,
-  MapRef,
-  LngLat,
-  LngLatLike,
-} from "react-map-gl";
+import type { MarkerDragEvent, MapMouseEvent, MapRef } from "react-map-gl";
 
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { uiStore } from "../store/uiStore";
 import { mapStore } from "@/store/mapStore";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { MapPinArea, Newspaper, Target } from "@phosphor-icons/react";
+import { Newspaper, Target } from "@phosphor-icons/react";
 import { format } from "date-fns";
 
 type MapPointData = {
