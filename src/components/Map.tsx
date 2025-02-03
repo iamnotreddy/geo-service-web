@@ -33,7 +33,7 @@ export default function MapComponent() {
   const { data: mapMarkers } = useQuery<MapPointData[]>({
     queryKey: ["mapPoints"],
     queryFn: () =>
-      fetch("http://localhost:3001/map-points").then((res) => {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/map-points`).then((res) => {
         if (!res.ok) throw new Error("Failed to fetch map points");
         return res.json();
       }),

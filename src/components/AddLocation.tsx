@@ -29,7 +29,7 @@ export const AddLocation = () => {
 
   const { mutate } = useMutation({
     mutationFn: (data: MapPointData) =>
-      fetch("http://localhost:3001/map-points", {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/map-points`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
