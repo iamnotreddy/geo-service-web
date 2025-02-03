@@ -5,6 +5,7 @@ import MapComponent from "../components/Map";
 import { NavBar } from "@/components/NavBar";
 import { uiStore } from "@/store/uiStore";
 import { AddLocation } from "@/components/AddLocation";
+import { AddModeDisplay } from "@/components/AddModeDisplay";
 
 export default function Home() {
   const { currentMode } = useSnapshot(uiStore);
@@ -34,13 +35,3 @@ export default function Home() {
     </div>
   );
 }
-
-export const AddModeDisplay = () => {
-  return (
-    <div className="h-10 flex items-center justify-center mx-auto">
-      <div className="font-semibold text-sm">
-        Click on the map to change the location
-      </div>
-    </div>
-  );
-};
